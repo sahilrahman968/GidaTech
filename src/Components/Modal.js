@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react'
 import LineGraph from './LineGraph'
 
 function Modal() {
+  //state variables
+
   let [loader, setLoader] = useState(false)
   let [displayGraph, setDisplayGraph] = useState(false)
+
+  //gif code
   const DisplayGif = (loader) => {
     if (loader == false) {
       return null
@@ -33,6 +37,21 @@ function Modal() {
     }
   }
 
+  //gif click handlert
+  const showGif = () => {
+    if (loader == false) {
+      loader = !loader
+      setLoader(loader)
+      console.log(loader)
+    }
+    setTimeout(() => {
+      loader = !loader
+      setLoader(loader)
+      console.log(loader)
+    }, 7000)
+  }
+
+  //graph code
   const DisplayLineGraph = (displayGraph) => {
     if (displayGraph == false) {
       return null
@@ -60,19 +79,7 @@ function Modal() {
     }
   }
 
-  const showGif = () => {
-    if (loader == false) {
-      loader = !loader
-      setLoader(loader)
-      console.log(loader)
-    }
-    setTimeout(() => {
-      loader = !loader
-      setLoader(loader)
-      console.log(loader)
-    }, 7000)
-  }
-
+  //graph click handler
   const showGraph = () => {
     if (displayGraph == false) {
       displayGraph = !displayGraph
@@ -86,6 +93,7 @@ function Modal() {
     }, 3000)
   }
 
+  /* ************************************************************ */
   return (
     <>
       <button
@@ -96,7 +104,7 @@ function Modal() {
       >
         Show Picture!
       </button>
-      <div className='dialog-box modal-box'>
+      <div className='dialog-box modal-box modal-dialog-box'>
         <div
           className='modal fade'
           id='exampleModal'

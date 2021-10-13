@@ -59,6 +59,20 @@ p:hover {
   backdrop-filter: blur(10rem);
 }
 
+@media (max-width: 720px) {
+  .modal-dialog-box {
+    width: 90%;
+  }
+}
+
+@media (min-width: 720px) {
+  .modal-dialog-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @media (max-width: 615px) {
   .button {
     position: absolute;
